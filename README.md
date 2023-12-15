@@ -4,9 +4,8 @@
 
 </div>
 
-✨ This is the implementation of the paper [Exploring Format Consistency for Instruction Tuning](https://arxiv.org/abs/2307.15504)
+✨ This is the implementation of the paper [Exploring Format Consistency for Instruction Tuning](https://arxiv.org/abs/2307.15504).
 
-![framework](./assets/framework.png)
 
 <!-- *Read this in [中文](README_zh.md).* -->
 
@@ -17,6 +16,7 @@
 
 - [Quick links](#quick-links)
 - [Overview](#overview)
+- [Data and Models](#data-and-models)
 - [Requirements](#requirements)
 - [Format Transfer](#format-transfer)
   - [Usage](#usage)
@@ -26,10 +26,22 @@
 
 
 ## Overview
-![intro](./assets/intro.png)
+<!-- ![intro](./assets/intro.png) -->
+![framework](./assets/framework.png)
 
-In this work, we propose a framework named “Unified Instruction Tuning” (UIT), which calls OpenAI APIs for automatic format transfer among different instruction tuning datasets such as PromptSource, FLAN and CrossFit. With the framework, we (1) demonstrate the necessity of maintaining format consistency in instruction tuning; (2) improve the generalization performance on unseen instructions on T5-LM-xl; (3) provide a novel perplexity-based denoising method to reduce the noise of automatic format transfer to make the UIT framework more practical and a smaller offline model based on GPT-J that achieves comparable format transfer capability to OpenAI APIs to reduce costs in practice. Further analysis regarding variations of targeted formats and other effects is intended. The code and trained models will soon be available.
+In this work, we propose a framework named “Unified Instruction Tuning” (UIT) for automatic format transfer among different instruction tuning datasets such as PromptSource, FLAN and CrossFit. With the framework, we:
+- Demonstrate the necessity of maintaining format consistency in instruction tuning;
+- Improve the generalization performance on unseen instructions on T5-LM-xl;
+- Provide a novel perplexity-based denoising method to reduce the noise of automatic format transfer to make the UIT framework more practical and a smaller offline model based on GPT-J that achieves comparable format transfer capability to OpenAI APIs to reduce costs in practice. 
+Further analysis regarding variations of targeted formats and other effects is intended. The data and trained models are now available.
 
+## Data and Models
+
+All the data we use in our main experiments are available [here](https://drive.google.com/drive/u/0/folders/12MepDWmQA3Wm8wpfMzeYHLFg1YwlcUGJ):
+- `niv2_as_target`: Contains Flan, PromptSource, DiversePrompt and CrossFit data transferred into Ni-v2's format.
+- `flan_as_target`: Contains the Ni-v2 data transferred into Flan's format.
+
+Checkpoints we use in our local transfer experiments are available [here](https://drive.google.com/drive/u/0/folders/12MepDWmQA3Wm8wpfMzeYHLFg1YwlcUGJ).
 
 ## Requirements
 
